@@ -44,33 +44,30 @@
 
 ### 4.代码树图
 ~~~
-├─.idea
-│  ├─inspectionProfiles
-│  └─libraries
 ├─src
 │  ├─main
 │  │  ├─java
 │  │  │  └─com
 │  │  │      └─hnzx
 │  │  │          └─loan
-│  │  │              ├─controller
-│  │  │              ├─enums
-│  │  │              ├─exception
-│  │  │              ├─mapper
-│  │  │              ├─model
-│  │  │              ├─service
-│  │  │              │  └─impl
-│  │  │              ├─tool
-│  │  │              └─vo
+│  │  │              ├─controller               -- 控制器
+│  │  │              ├─enums                    -- 枚举类型
+│  │  │              ├─exception                -- 全局异常和自定义异常
+│  │  │              ├─mapper                   -- MyBatis Mapper映射类
+│  │  │              ├─model                    -- 实体对象
+│  │  │              ├─service                  -- 服务层接口
+│  │  │              │  └─impl                  -- 服务层实现类
+│  │  │              ├─tool                     -- 工具类
+│  │  │              └─vo                       -- 前端返回视图类
 │  │  └─resources
-│  │      ├─mappers
-│  │      ├─static
-│  │      │  ├─css
-│  │      │  ├─images
-│  │      │  ├─js
-│  │      │  └─lib
-│  │      │      ├─jquery
-│  │      │      └─layui
+│  │      ├─mappers                             -- 定义对应的Mapper XML存放位置CRUD在这里定义
+│  │      ├─static                              -- 静态文件夹，主要存放css、js、images、lib第三方类库
+│  │      │  ├─css                              -- 存放css文件
+│  │      │  ├─images                           -- 存放图片文件
+│  │      │  ├─js                               -- 存放js文件
+│  │      │  └─lib                              -- 存放第三类类库
+│  │      │      ├─jquery                       -- jquery库
+│  │      │      └─layui                        -- layui类库
 │  │      │          ├─css
 │  │      │          │  └─modules
 │  │      │          │      ├─laydate
@@ -82,14 +79,14 @@
 │  │      │          │  └─face
 │  │      │          └─lay
 │  │      │              └─modules
-│  │      └─templates
+│  │      └─templates                           -- 静态页面html5存放位置
 │  │          └─user
-│  └─test
+│  └─test                                       -- 单元测试类，存放的文件夹
 │      └─java
 │          └─com
 │              └─hnzx
 │                  └─loan
-└─target
+└─target                                        -- 编译生成的target文件夹
     ├─classes
     │  ├─com
     │  │  └─hnzx
