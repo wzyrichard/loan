@@ -21,10 +21,10 @@
   
     2.3 推荐下载IDEA
        首先下载IDEA，到http://www.jetbrains.com/idea/?fromMenu 下载IDEA版本，具体的破解教程网上也有
-    
+        
 ~~~
 
 ### 3.代码介绍
 ~~~
-    
+    3.1 前台采用layer.js、jquery.js第三方插件，
 ~~~
