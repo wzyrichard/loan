@@ -33,9 +33,9 @@ public class UserController {
      * 用户首页
      * @return
      */
-    @GetMapping(value = {",", ""})
+    @GetMapping(value = {"/", ""})
     public String index() {
-        return PREFIX + "/index.html";
+        return PREFIX + "/index";
     }
 
     /**

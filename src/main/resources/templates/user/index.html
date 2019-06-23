@@ -16,37 +16,133 @@
 
 </head>
 <body>
+
+    <!-- 导航部分 开始 -->
+    <ul class="layui-nav layui-bg-cyan" lay-filter="">
+        <li class="layui-nav-item">
+            <a href="">首页</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+            <a href="">我要贷款</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">我要购买</a>
+        </li>
+        <div class="layui-nav-item">
+            <a href="javascript:;">解决方案</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                <dd><a href="">移动模块</a></dd>
+                <dd><a href="">后台模版</a></dd>
+                <dd><a href="">电商平台</a></dd>
+            </dl>
+        </div>
+    </ul>
+
+    <ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
+        <li class="layui-nav-item">
+            <a href="">我的信息</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">登录</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">退出</a>
+        </li>
+    </ul>
+    <!-- 导航部分 结束 -->
+
     <div class="layui-container" style="margin-top: 15px">
         <div class="layui-row">
-            <div class="layui-col-md-offset2 layui-col-md8">
+            <div class="layui-col-md-offset3 layui-col-md6">
                 <form class="layui-form" action="">
                     <div class="layui-form-item">
                         <label class="layui-form-label">用户名</label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                            <input type="text" name="title" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <label class="layui-form-label">密码框</label>
-                        <div class="layui-input-inline">
+                        <div class="layui-input-inline" style="width: 50%">
                             <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                         </div>
                         <div class="layui-form-mid layui-word-aux">密码长度为6~18位</div>
                     </div>
+
                     <div class="layui-form-item">
-                        <label class="layui-form-label">祖籍</label>
-                        <div class="layui-input-block">
-                            <select name="city" lay-verify="required">
-                                <option value=""></option>
-                                <option value="0">北京</option>
-                                <option value="1">上海</option>
-                                <option value="2">广州</option>
-                                <option value="3">深圳</option>
-                                <option value="4">杭州</option>
-                            </select>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">祖籍</label>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid" style="width: 1%">-</div>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="qu" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">苏州市</option>
+                                    <option value="1">宿州市</option>
+                                    <option value="2">合肥市</option>
+                                    <option value="3">芜湖市</option>
+                                    <option value="4">巢湖市</option>
+                                    <option value="5">马鞍式</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid" style="width: 1%">-</div>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="zhen" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">灵璧县</option>
+                                    <option value="0">泗县</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+
                     <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">现居住地</label>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="city" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">北京</option>
+                                    <option value="1">上海</option>
+                                    <option value="2">广州</option>
+                                    <option value="3">深圳</option>
+                                    <option value="4">杭州</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid" style="width: 1%">-</div>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="qu" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">苏州市</option>
+                                    <option value="1">宿州市</option>
+                                    <option value="2">合肥市</option>
+                                    <option value="3">芜湖市</option>
+                                    <option value="4">巢湖市</option>
+                                    <option value="5">马鞍式</option>
+                                </select>
+                            </div>
+                            <div class="layui-form-mid" style="width: 1%">-</div>
+                            <div class="layui-input-inline" style="width: 23%">
+                                <select name="zhen" lay-verify="required">
+                                    <option value=""></option>
+                                    <option value="0">灵璧县</option>
+                                    <option value="0">泗县</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="layui-form-item">
                         <label class="layui-form-label">职位</label>
                         <div class="layui-input-block">
                             <input type="checkbox" name="like[write]" title="写作">
@@ -54,29 +150,51 @@
                             <input type="checkbox" name="like[dai]" title="发呆">
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <label class="layui-form-label">是否有效</label>
                         <div class="layui-input-block">
                             <input type="checkbox" name="switch" lay-skin="switch">
                         </div>
-                    </div>
+                    </div>-->
+
                     <div class="layui-form-item">
                         <label class="layui-form-label">性别</label>
                         <div class="layui-input-block">
-                            <input type="radio" name="sex" value="男" title="男">
-                            <input type="radio" name="sex" value="女" title="女" checked>
+                            <input type="radio" name="sex" value="男" title="男" checked>
+                            <input type="radio" name="sex" value="女" title="女">
                         </div>
                     </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">身份证号</label>
+                        <div class="layui-input-inline" style="width: 50%">
+                            <input type="text" name="idCard" required layui-verfify="required" placeholder="请输入身份证号" autocomplete="off" class="layui-input" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">身份证长度是18位</div>
+                    </div>
+                    
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">家庭成员</label>
+                        <div class="layui-input-inline" style="width: 30%">
+                            <input type="text" name="familyPopulation" required lay-verify="required" placeholder="请输入家庭成员多少个" autocomplete="off" class="layui-input" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">个</div>
+                    </div>
+
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">文本域</label>
+                        <label class="layui-form-label">备注</label>
                         <div class="layui-input-block">
-                            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                            <textarea name="desc" placeholder="请输入备注内容" class="layui-textarea"></textarea>
                         </div>
                     </div>
+
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            <div class="layui-col-md-offset3 layui-col-md6">
+                                <button class="layui-btn" style="width: 108px" lay-submit lay-filter="formDemo">下一步</button>
+                                <button type="reset" style="float: right; width: 108px" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -84,9 +202,44 @@
             </div>
         </div>
     </div>
+
+    <div class="loan-footer">
+        <p>
+            <a href="">惠农在线贷款</a>
+            2019 @
+            <a href="">www.hnzx1688.com</a>
+        </p>
+        <p>
+            <a href="">付费计划</a>
+            <a href="">组件平台</a>
+            <a href="">模板市场</a>
+            <a href="">年度案例</a>
+            <a href="">公众号</a>
+        </p>
+        <p>
+            <a href="">感谢一下赞助商</a>
+        </p>
+    </div>
 </body>
 
+<style>
+    .loan-footer {
+        margin: 40px 0px 0px;
+        padding: 20px 20px;
+        line-height: 30px;
+        text-align: center;
+        color: #737573;
+        background-color: #f2f2f2;
+        border-top: 1px solid #e2e2e2;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+</style>
+
 <script>
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+
     //Demo
     layui.use('form', function(){
         var form = layui.form;
