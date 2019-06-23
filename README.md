@@ -26,5 +26,117 @@
 
 ### 3.代码介绍
 ~~~
-    3.1 前台采用layer.js、jquery.js第三方插件，
+    3.1 前台采用layer.js、jquery.js第三方插件，html5, thymeleaf模板引擎，css3样式
+    
+    3.2 后台采用SpringBoot、MyBatis、MySQL、Maven等等有些技术
+    
+    3.3 后台代码分层，采用MVC模式，分为Controller、Model、View、Service层
+        
+        3.3.1 Controller主要功能功能，请求转发，得到响应的数据或者转发到响应的界面
+        
+        3.3.2 Model主要是抽象现实世界的对象模型，和数据库对应的领域模型
+        
+        3.3.3 Mapper主要是负责数据持久化，对数据库进行CRUD操作，以及事务机制
+        
+        3.3.4 Service主要是业务逻辑层，主要是针对业务逻辑处理
+        
+~~~
+
+### 4.代码树图
+~~~
+├─.idea
+│  ├─inspectionProfiles
+│  └─libraries
+├─src
+│  ├─main
+│  │  ├─java
+│  │  │  └─com
+│  │  │      └─hnzx
+│  │  │          └─loan
+│  │  │              ├─controller
+│  │  │              ├─enums
+│  │  │              ├─exception
+│  │  │              ├─mapper
+│  │  │              ├─model
+│  │  │              ├─service
+│  │  │              │  └─impl
+│  │  │              ├─tool
+│  │  │              └─vo
+│  │  └─resources
+│  │      ├─mappers
+│  │      ├─static
+│  │      │  ├─css
+│  │      │  ├─images
+│  │      │  ├─js
+│  │      │  └─lib
+│  │      │      ├─jquery
+│  │      │      └─layui
+│  │      │          ├─css
+│  │      │          │  └─modules
+│  │      │          │      ├─laydate
+│  │      │          │      │  └─default
+│  │      │          │      └─layer
+│  │      │          │          └─default
+│  │      │          ├─font
+│  │      │          ├─images
+│  │      │          │  └─face
+│  │      │          └─lay
+│  │      │              └─modules
+│  │      └─templates
+│  │          └─user
+│  └─test
+│      └─java
+│          └─com
+│              └─hnzx
+│                  └─loan
+└─target
+    ├─classes
+    │  ├─com
+    │  │  └─hnzx
+    │  │      └─loan
+    │  │          ├─controller
+    │  │          ├─enums
+    │  │          ├─exception
+    │  │          ├─mapper
+    │  │          ├─model
+    │  │          ├─service
+    │  │          │  └─impl
+    │  │          ├─tool
+    │  │          └─vo
+    │  ├─mappers
+    │  ├─META-INF
+    │  ├─static
+    │  │  ├─css
+    │  │  ├─js
+    │  │  └─lib
+    │  │      ├─jquery
+    │  │      └─layui
+    │  │          ├─css
+    │  │          │  └─modules
+    │  │          │      ├─laydate
+    │  │          │      │  └─default
+    │  │          │      └─layer
+    │  │          │          └─default
+    │  │          ├─font
+    │  │          ├─images
+    │  │          │  └─face
+    │  │          └─lay
+    │  │              └─modules
+    │  └─templates
+    │      └─user
+    ├─generated-sources
+    │  └─annotations
+    ├─generated-test-sources
+    │  └─test-annotations
+    ├─maven-status
+    │  └─maven-compiler-plugin
+    │      ├─compile
+    │      │  └─default-compile
+    │      └─testCompile
+    │          └─default-testCompile
+    ├─surefire-reports
+    └─test-classes
+        └─com
+            └─hnzx
+                └─loan
 ~~~
