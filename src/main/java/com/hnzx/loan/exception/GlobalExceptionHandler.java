@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  * 版本号 			作者 			日期       				简介
  * 	1.0				ccy		        2019/6/22			    create
  */
-/*@ControllerAdvice
+@ControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
@@ -29,4 +29,4 @@ public class GlobalExceptionHandler {
         }
         return new ResponseTool().error(BusinessEnum.REQUEST_NULL.getCode(),BusinessEnum.REQUEST_NULL.getMessage());
     }
-}*/
+}

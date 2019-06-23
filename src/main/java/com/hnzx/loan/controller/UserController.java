@@ -4,10 +4,7 @@ import com.hnzx.loan.model.User;
 import com.hnzx.loan.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * ClassName: UserController
@@ -26,6 +23,20 @@ public class UserController {
      */
     @Autowired
     private IUserService userService;
+
+    /**
+     * 页面前缀
+     */
+    private String PREFIX = "/user";
+
+    /**
+     * 用户首页
+     * @return
+     */
+    @GetMapping(value = {",", ""})
+    public String index() {
+        return PREFIX + "/index.html";
+    }
 
     /**
      * 添加用户
