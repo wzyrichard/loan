@@ -27,7 +27,7 @@ public class User implements Serializable {
     /**
      * 用户主键
      */
-    private Long userId;
+    private Long uid;
 
     /**
      * 用户姓名

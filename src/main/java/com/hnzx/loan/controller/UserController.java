@@ -39,6 +39,15 @@ public class UserController {
     }
 
     /**
+     * 用户登录接口
+     * @return
+     */
+    @PostMapping(value = "/login")
+    public String login() {
+        return PREFIX + "/login";
+    }
+
+    /**
      * 添加用户
      * @param user
      */

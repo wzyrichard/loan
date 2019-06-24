@@ -15,10 +15,19 @@ import lombok.Data;
 @AllArgsConstructor
 public final class ResponseVO<T> {
 
+    /**
+     * 状态码
+     */
     private Integer code;
 
+    /**
+     * 状态信息
+     */
     private String message;
 
+    /**
+     * 返回数据
+     */
     private Object data;
 
 }

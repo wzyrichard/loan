@@ -6,10 +6,73 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1.0"/>
     <title>Title</title>
+
+    <!-- 导入Css文件 开始 -->
+    <link rel="stylesheet" href="lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="css/user.css" />
+    <script src="lib/layui/layui.js"></script>
+    <script src="lib/jquery/jquery-2.2.4.js"></script>
+    <!-- 导入Css文件 结束 -->
 </head>
 <body>
+
+<!-- 导航部分 开始 -->
+<ul class="layui-nav layui-bg-cyan" lay-filter="">
+    <li class="layui-nav-item">
+        <a href="/index">首页</a>
+    </li>
+    <li class="layui-nav-item layui-this">
+        <a href="">农户财务简表</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">贷款信息</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">经营情况信息</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">资料上传</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/user">个人信息</a>
+    </li>
+    <!--<div class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </div>-->
+</ul>
+
+<ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
+    <li class="layui-nav-item">
+        <a href="">登录</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">退出</a>
+    </li>
+</ul>
+<!-- 导航部分 结束 -->
     <div>
         <h3>欢迎来到惠农在线贷款平台</h3>
     </div>
 </body>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
 </html>
