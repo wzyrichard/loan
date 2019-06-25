@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1.0"/>
+    <title>用户首页</title>
+
+    <!-- 导入Css文件 开始 -->
+    <link rel="stylesheet" href="lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="css/user.css" />
+    <script src="lib/layui/layui.js"></script>
+    <script src="lib/jquery/jquery-2.2.4.js"></script>
+    <!-- 导入Css文件 结束 -->
+
+</head>
+<body>
+
+<!-- 导航部分 开始 -->
+<ul class="layui-nav layui-bg-cyan" lay-filter="">
+    <li class="layui-nav-item">
+        <a href="/index">首页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">农户财务简表</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">贷款信息</a>
+    </li>
+    <li class="layui-nav-item layui-this">
+        <a href="/business">经营情况信息</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/material">资料上传</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="/user">个人信息</a>
+    </li>
+    <!--<div class="layui-nav-item">
+        <a href="javascript:;">解决方案</a>
+        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;
+            <dd><a href="">移动模块</a></dd>
+            <dd><a href="">后台模版</a></dd>
+            <dd><a href="">电商平台</a></dd>
+        </dl>
+    </div>-->
+</ul>
+
+<ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
+    <li class="layui-nav-item">
+        <a href="">登录</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">退出</a>
+    </li>
+</ul>
+<!-- 导航部分 结束 -->
+
+<div class="layui-container" style="margin-top: 15px">
+    <div class="layui-row">
+        <div class="layui-col-md-offset3 layui-col-md6">
+            <form class="layui-form" action="">
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">经营项目名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入经营项目名称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">经营规模</label>
+                    <div class="layui-input-inline" style="width: 20%">
+                        <input type="password" name="password" required lay-verify="required" placeholder="请输入经营规模" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">人</div>
+                </div>
+
+
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">已经营年限</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入已经营年限" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">经营场所性质</label>
+
+                    <div class="layui-input-inline" style="width: 50%">
+                        <input type="text" name="idCard" required layui-verfify="required" placeholder="请输入族别" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">身份证号</label>
+                    <div class="layui-input-inline" style="width: 50%">
+                        <input type="text" name="idCard" required layui-verfify="required" placeholder="请输入身份证号" autocomplete="off" class="layui-input" />
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">身份证长度是18位</div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">家庭成员</label>
+                    <div class="layui-input-inline" style="width: 30%">
+                        <input type="text" name="familyPopulation" required lay-verify="required" placeholder="请输入家庭成员多少个" autocomplete="off" class="layui-input" />
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">个</div>
+                </div>
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">备注</label>
+                    <div class="layui-input-block">
+                        <textarea name="desc" placeholder="请输入备注内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <div class="layui-col-md-offset3 layui-col-md6">
+                            <button class="layui-btn" style="width: 108px" lay-submit lay-filter="formDemo">下一步</button>
+                            <button type="reset" style="float: right; width: 108px" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<div class="loan-footer">
+    <p>
+        <a href="">惠农在线贷款</a>
+        2019 @
+        <a href="">www.hnzx1688.com</a>
+    </p>
+    <p>
+        <a href="">付费计划</a>
+        <a href="">组件平台</a>
+        <a href="">模板市场</a>
+        <a href="">年度案例</a>
+        <a href="">公众号</a>
+    </p>
+    <p>
+        <a href="">感谢一下赞助商</a>
+    </p>
+</div>
+</body>
+
+<style>
+    .loan-footer {
+        margin: 40px 0px 0px;
+        padding: 20px 20px;
+        line-height: 30px;
+        text-align: center;
+        color: #737573;
+        background-color: #f2f2f2;
+        border-top: 1px solid #e2e2e2;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+</style>
+
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+</script>
+</html>

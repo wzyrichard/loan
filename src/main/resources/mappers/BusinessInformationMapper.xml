@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hnzx.loan.mapper.BussinessInformationMapper">
+<mapper namespace="com.hnzx.loan.mapper.BusinessInformationMapper">
 
     <!-- 基本表 开始 -->
     <sql id="BASE_TABLE">
@@ -15,6 +15,9 @@
     </sql>
     <!-- 基本列 结束 -->
 
+    <insert id="saveBusinessInformation" parameterType="com.hnzx.loan.model.BusinessInformation">
+
+    </insert>
 
 
 </mapper>
