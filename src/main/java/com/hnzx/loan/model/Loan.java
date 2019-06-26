@@ -22,4 +22,8 @@ import java.io.Serializable;
 public class Loan implements Serializable {
 
     private static final long serialVersionUID = 3407989245215673418L;
+
+    private Long loanId;
+
+    private String name;
 }

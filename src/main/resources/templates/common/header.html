@@ -1,31 +1,23 @@
 <!-- 导航部分 开始 -->
-<ul class="layui-nav layui-bg-cyan" lay-filter="">
+<ul class="layui-nav layui-bg-cyan" lay-filter="" th:fragment="commonHeader">
     <li class="layui-nav-item">
         <a href="/index">首页</a>
     </li>
-    <li class="layui-nav-item layui-this">
+    <li class="layui-nav-item">
         <a href="">农户财务简表</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">贷款信息</a>
+        <a href="/loan">贷款信息</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">经营情况信息</a>
+        <a href="/business">经营情况信息</a>
     </li>
     <li class="layui-nav-item">
-        <a href="">资料上传</a>
+        <a href="/material">资料上传</a>
     </li>
-    <li class="layui-nav-item">
-        <a href="">个人信息</a>
+    <li class="layui-nav-item layui-this">
+        <a href="/user">个人信息</a>
     </li>
-    <!--<div class="layui-nav-item">
-        <a href="javascript:;">解决方案</a>
-        <dl class="layui-nav-child"> &lt;!&ndash; 二级菜单 &ndash;&gt;
-            <dd><a href="">移动模块</a></dd>
-            <dd><a href="">后台模版</a></dd>
-            <dd><a href="">电商平台</a></dd>
-        </dl>
-    </div>-->
 </ul>
 
 <ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
@@ -37,3 +29,4 @@
     </li>
 </ul>
 <!-- 导航部分 结束 -->
+
