@@ -1,32 +1,35 @@
 <!-- 导航部分 开始 -->
-<ul class="layui-nav layui-bg-cyan" lay-filter="" th:fragment="commonHeader">
-    <li class="layui-nav-item">
-        <a href="/index">首页</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="">农户财务简表</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="/loan">贷款信息</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="/business">经营情况信息</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="/material">资料上传</a>
-    </li>
-    <li class="layui-nav-item layui-this">
-        <a href="/user">个人信息</a>
-    </li>
-</ul>
+<div th:fragment="commonHeader">
+    <ul class="layui-nav layui-bg-cyan" lay-filter="" >
+        <li class="layui-nav-item" id="index">
+            <a href="/index">首页</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">农户财务简表</a>
+        </li>
+        <li class="layui-nav-item" id="loanInfo">
+            <a href="/loan">贷款信息</a>
+        </li>
+        <li class="layui-nav-item" id="businessInfo">
+            <a href="/business">经营情况信息</a>
+        </li>
+        <li class="layui-nav-item" id="materialUpload">
+            <a href="/material">资料上传</a>
+        </li>
+        <li class="layui-nav-item" id="userInfo">
+            <a href="/user">个人信息</a>
+        </li>
+    </ul>
 
-<ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
-    <li class="layui-nav-item">
-        <a href="">登录</a>
-    </li>
-    <li class="layui-nav-item">
-        <a href="">退出</a>
-    </li>
-</ul>
+    <ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
+        <li class="layui-nav-item">
+            <a href="">登录</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="">退出</a>
+        </li>
+    </ul>
+</div>
+
 <!-- 导航部分 结束 -->
 

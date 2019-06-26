@@ -29,5 +29,45 @@
     </insert>
     <!-- 添加用户 结束 -->
 
+    <!-- 查找用户 开始 -->
+    <select id="findUserById" parameterType="long" resultType="com.hnzx.loan.model.User">
+        SELECT
+            <include refid="BASE_COLUMN" />
+        FROM
+            <include refid="BASE_TABLE" />
+        WHERE
+            uid = #{uid, jdbcType=BIGINT}
+    </select>
+    <!-- 查找用户 结束 -->
+
+    <!-- 查找所有用户 开始 -->
+    <select id="findAllUser" resultType="com.hnzx.loan.model.User">
+        SELECT
+            <include refid="BASE_COLUMN" />
+        FROM
+            <include refid="BASE_TABLE" />
+    </select>
+    <!-- 查找所有用户 结束 -->
+
+    <!-- 更新用户 开始 -->
+    <update id="updateUser" parameterType="com.hnzx.loan.model.User">
+        UPDATE
+            <include refid="BASE_TABLE" />
+        SET
+        <if test="username != null">
+            username = #{username, jdbcType=VARCHAR}
+        </if>
+    </update>
+    <!-- 更新用户 结束 -->
+
+    <!-- 删除用户 开始 -->
+    <delete id="deleteUser" parameterType="long">
+        DELETE
+        FROM
+            <include refid="BASE_TABLE" />
+        WHERE
+            uid = #{uid, jdbcType=BIGINT}
+    </delete>
+    <!-- 删除用户 结束 -->
 
 </mapper>

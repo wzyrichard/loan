@@ -54,6 +54,7 @@ public class UserController {
     @PostMapping(value = "/save")
     @ResponseBody
     public void saveUser(@RequestBody User user) {
+        System.out.println("提交过来的用户" + user);
         userService.saveUser(user);
     }
 }

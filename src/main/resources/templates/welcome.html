@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common/default :: common_header(~{::title},~{::link})">
     <title>用户首页</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
     <!-- 导航部分 开始 -->
@@ -17,6 +17,8 @@
             <div>条目4</div>
         </div>
     </div>
+
+    <div th:replace="~{common/footer::commonFooter}"></div>
 </body>
 <script>
     layui.use('element', function () {
