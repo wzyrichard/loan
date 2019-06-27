@@ -1,6 +1,6 @@
 package com.hnzx.loan.service.impl;
 
-import com.hnzx.loan.service.IBusinessInformationService;
+import com.hnzx.loan.service.IBusinessInfoService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +12,6 @@ import org.springframework.stereotype.Service;
  * 	1.0				ccy		        2019/6/25			    create
  */
 @Service
-public class BusinessInformationServiceImpl implements IBusinessInformationService {
+public class BusinessInfoServiceImpl implements IBusinessInfoService {
 
 }

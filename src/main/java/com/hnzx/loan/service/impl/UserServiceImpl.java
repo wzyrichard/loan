@@ -5,6 +5,7 @@ import com.hnzx.loan.exception.BusinessException;
 import com.hnzx.loan.mapper.UserMapper;
 import com.hnzx.loan.model.User;
 import com.hnzx.loan.service.IUserService;
+import com.hnzx.loan.tool.SecurityTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,6 +43,7 @@ public class UserServiceImpl implements IUserService {
             throw new BusinessException(BusinessEnum.REQUEST_NULL);
         }
         try {
+            user.setPassword(SecurityTool.md5(user.getPassword()));
             result = userMapper.saveUser(user);
         } catch (Exception e) {
             throw new BusinessException(BusinessEnum.FAIL);

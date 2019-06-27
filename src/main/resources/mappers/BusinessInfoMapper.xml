@@ -15,7 +15,7 @@
     </sql>
     <!-- 基本列 结束 -->
 
-    <insert id="saveBusinessInformation" parameterType="com.hnzx.loan.model.BusinessInformation">
+    <insert id="saveBusinessInformation" parameterType="com.hnzx.loan.model.BusinessInfo">
 
     </insert>
 

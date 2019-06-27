@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * ClassName: BusinessInformation
- * FileName：BusinessInformation.java
+ * ClassName: BusinessInfo
+ * FileName：BusinessInfo.java
  * Description：经营信息实体类
  * History：
  * 版本号 			作者 			日期       				简介
@@ -21,7 +21,7 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class BusinessInformation implements Serializable {
+public class BusinessInfo implements Serializable {
 
     /**
      * 声明序列化

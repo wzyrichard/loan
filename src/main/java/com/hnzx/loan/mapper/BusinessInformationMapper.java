@@ -1,6 +1,6 @@
 package com.hnzx.loan.mapper;
 
-import com.hnzx.loan.model.BusinessInformation;
+import com.hnzx.loan.model.BusinessInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -14,5 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface BusinessInformationMapper {
 
-    int saveBusinessInformation(BusinessInformation businessInformation);
+    int saveBusinessInformation(BusinessInfo businessInformation);
 }
