@@ -22,4 +22,13 @@ public class LoanController {
     public String index() {
         return PREFIX + "/index";
     }
+
+    /**
+     * 贷款申明
+     * @return
+     */
+    @GetMapping(value = "/declaration")
+    public String declaration() {
+        return PREFIX + "/declaration";
+    }
 }

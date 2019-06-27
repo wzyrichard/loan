@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common/default :: common_header(~{::title},~{::link})">
-    <title>用户首页</title>
+    <title>个人信息</title>
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
     <div class="layui-container comment">
         <div class="layui-row">
             <div class="layui-col-md-offset3 layui-col-md6">
+                <h2 style="text-align: center;font-weight: bold;margin-bottom: 25px">请您填写个人信息</h2>
                 <form class="layui-form" action="/user/save" method="post">
 
                     <div class="layui-form-item">
@@ -181,10 +182,11 @@
 
         //监听提交
         form.on('submit(formDemo)', function(data){
-            var sendJson = {
+
+            /*var sendJson = {
                 username: $("input:text[name='username']").val(),
                 password: $("input:password[name='password']").val()
-            }
+            }*/
 
             $.ajax({
                 url: 'user/save',
@@ -198,7 +200,7 @@
                     }
                 },
                 error: function () {
-                    
+                    layer.error("添加失败");
                 }
             })
             return false;

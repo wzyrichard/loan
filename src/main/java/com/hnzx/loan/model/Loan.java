@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * ClassName: Loan
@@ -26,4 +27,16 @@ public class Loan implements Serializable {
     private Long loanId;
 
     private String name;
+
+    private BigDecimal loanAmount;
+
+    private String loanTerm;
+
+    private Integer guaranteeMethod;
+
+    private String guarantorName;
+
+    private String loanMethod;
+
+    private String repayment;
 }

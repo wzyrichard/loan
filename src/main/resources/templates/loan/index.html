@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="common/default :: common_header(~{::title},~{::link})">
-    <title>贷款首页</title>
+    <title>贷款信息</title>
     <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
@@ -10,9 +10,115 @@
     <!-- 导航部分 开始 -->
 
     <div class="layui-container comment">
-        <span>这是生活</span>
+        <div class="layui-row">
+            <div class="layui-col-md-offset3 layui-col-md6">
+                <h2 style="text-align: center;font-weight: bold;margin-bottom: 25px">请您填写贷款信息</h2>
+                <form class="layui-form" action="" method="post">
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">贷款金额</label>
+                        <div class="layui-input-inline" style="width: 70%">
+                            <input type="text" id="loanAmount" name="loanAmount" placeholder="请输入贷款金额" autocomplete="off" class="layui-input" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux">元</div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">贷款期限</label>
+                        <div class="layui-input-block" style="width: 50%">
+                            <select name="loanTerm" id="loanTerm">
+                                <option value=""></option>
+                                <option value="0">1年</option>
+                                <option value="1">2年</option>
+                                <option value="2">3年</option>
+                                <option value="3">5年</option>
+                                <option value="3">10年</option>
+                                <option value="3">20年</option>
+                                <option value="3">30年</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">担保方式</label>
+                        <div class="layui-input-block" style="width: 50%">
+                            <select name="guaranteeMethod" id="guaranteeMethod">
+                                <option value=""></option>
+                                <option value="0">保证</option>
+                                <option value="1">抵押</option>
+                                <option value="2">质押</option>
+                                <option value="3">留置</option>
+                                <option value="4">定金</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">担保人名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="guarantorName" id="guarantorName" required layui-verify="required" placeholder="请输入担保人名称" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">贷款方式</label>
+                        <div class="layui-input-block" style="width: 50%">
+                            <select name="loanMethod" id="loanMethod">
+                                <option value=""></option>
+                                <option value="0">创业贷款</option>
+                                <option value="1">抵押贷款</option>
+                                <option value="2">质押贷款</option>
+                                <option value="3">保证贷款</option>
+                                <option value="4">小额贷款</option>
+                                <option value="5">国际贸易融资</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">还款方式</label>
+                        <div class="layui-input-block" style="width: 50%">
+                            <select name="repayment" id="repayment">
+                                <option value=""></option>
+                                <option value="">等额本金</option>
+                                <option value="">等额本息</option>
+                                <option value="">等本等息</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">贷款用途</label>
+                        <div class="layui-input-block">
+                            <textarea name="loanUse" id="loanUse" placeholder="请输入贷款用途" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-col-md-offset4 layui-col-md4">
+                            <div class="layui-input-inline" style="width: 60%">
+                                <input type="checkbox" name="agree" lay-skin="primary" title="我已阅读并同意">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">
+                                <a href="/loan/declaration" style="color: red;text-decoration: underline;">贷款申明</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <div class="layui-col-md-offset3 layui-col-md6">
+                                <button class="layui-btn" style="width: 108px" lay-submit lay-filter="loanForm">下一步</button>
+                                <button class="layui-btn layui-btn-primary" style="float:right;width: 108px">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div th:replace="~{common/footer::commonFooter}"></div>
 </body>
+<script src="js/loan/index.js"></script>
 </html>

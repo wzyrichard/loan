@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/business")
-public class BusinessInformationController {
+public class BusinessInfoController {
 
     /**
      * 声明前缀
