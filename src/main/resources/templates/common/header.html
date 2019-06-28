@@ -1,11 +1,11 @@
 <!-- 导航部分 开始 -->
 <div th:fragment="commonHeader">
-    <ul class="layui-nav layui-bg-cyan" lay-filter="" >
+    <ul class="layui-nav layui-bg-cyan" lay-filter="demo" >
         <li class="layui-nav-item" id="index">
             <a href="/index">首页</a>
         </li>
         <li class="layui-nav-item">
-            <a href="">农户财务简表</a>
+            <a href="/finance">农户财务简表</a>
         </li>
         <li class="layui-nav-item" id="loanInfo">
             <a href="/loan">贷款信息</a>
@@ -23,13 +23,26 @@
 
     <ul class="layui-nav layui-bg-cyan" style="position: absolute; top: 0; right: 0">
         <li class="layui-nav-item">
-            <a href="">登录</a>
+            <a href="/user/login">
+                <i class="layui-icon layui-icon-username"></i>登录
+            </a>
         </li>
         <li class="layui-nav-item">
-            <a href="">退出</a>
+            <a href="/user/logout">
+                <i class="layui-icon layui-icon-radio"></i>退出
+            </a>
         </li>
     </ul>
 </div>
+<script>
+    layer.use('element', function () {
+        var element = layui.element;
 
+        //监听导航事件
+        element.on('nav(demo)', function (elem) {
+            layer.msg(elem.text());
+        })
+    })
+</script>
 <!-- 导航部分 结束 -->
 

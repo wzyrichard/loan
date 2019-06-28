@@ -57,4 +57,12 @@ public class UserController {
         System.out.println("提交过来的用户" + user);
         userService.saveUser(user);
     }
+
+    /**
+     * 用户退出
+     */
+    @PostMapping(value = "/logout")
+    public void logout() {
+
+    }
 }

@@ -20,6 +20,6 @@ public class FinanceSituationController {
 
     @GetMapping(value = {"/index", "/", ""})
     public String index() {
-        return PREFIX + "";
+        return PREFIX + "/index";
     }
 }
