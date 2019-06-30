@@ -2,9 +2,14 @@ package com.hnzx.loan.controller;
 
 import com.hnzx.loan.model.User;
 import com.hnzx.loan.service.IUserService;
+import com.hnzx.loan.tool.ResponseTool;
+import com.hnzx.loan.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * ClassName: UserController
@@ -53,9 +58,10 @@ public class UserController {
      */
     @PostMapping(value = "/save")
     @ResponseBody
-    public void saveUser(@RequestBody User user) {
+    public ResponseVO saveUser(@Valid @RequestBody User user, BindingResult bindingResult) {
         System.out.println("提交过来的用户" + user);
         userService.saveUser(user);
+        return new ResponseTool().success();
     }
 
     /**

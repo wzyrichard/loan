@@ -13,7 +13,7 @@
         <div class="layui-row">
             <div class="layui-col-md-offset3 layui-col-md6">
                 <h2 style="text-align: center;font-weight: bold;margin-bottom: 25px">请您填写贷款信息</h2>
-                <form class="layui-form" action="" method="post">
+                <form class="layui-form" action="/loan/save" method="post">
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">贷款金额</label>
@@ -121,4 +121,5 @@
     <div th:replace="~{common/footer::commonFooter}"></div>
 </body>
 <script src="js/loan/index.js"></script>
+<script src="js/common/bigDecimal.js"></script>
 </html>

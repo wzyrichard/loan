@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * ClassName: Loan
@@ -22,21 +24,59 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class Loan implements Serializable {
 
+    /**
+     * 声明序列化
+     */
     private static final long serialVersionUID = 3407989245215673418L;
 
+    /**
+     * 贷款主键
+     */
     private Long loanId;
 
-    private String name;
+    /**
+     * 贷款金额
+     */
+    private String loanAmount;
 
-    private BigDecimal loanAmount;
-
+    /**
+     * 贷款期限
+     */
     private String loanTerm;
 
+    /**
+     * 担保方式
+     */
     private Integer guaranteeMethod;
 
+    /**
+     * 担保人名称
+     */
     private String guarantorName;
 
+    /**
+     * 贷款方式
+     */
     private String loanMethod;
 
+    /**
+     * 还款方式
+     */
     private String repayment;
+
+    /**
+     * 贷款用途
+     */
+    private String loanUse;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+
 }

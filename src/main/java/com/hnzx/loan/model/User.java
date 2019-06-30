@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Length;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -32,6 +34,8 @@ public class User implements Serializable {
     /**
      * 用户姓名
      */
+    @NotEmpty(message = "用户名不能为空")
+    @Length(min = 3, max = 30, message = "用户名长度必须位于${min}到${max}之间")
     private String username;
 
     /**

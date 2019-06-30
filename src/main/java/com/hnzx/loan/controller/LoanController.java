@@ -1,8 +1,17 @@
 package com.hnzx.loan.controller;
 
+import com.hnzx.loan.model.Loan;
+import com.hnzx.loan.model.User;
+import com.hnzx.loan.service.ILoanService;
+import com.hnzx.loan.tool.ResponseTool;
+import com.hnzx.loan.vo.ResponseVO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * ClassName: LoanController
@@ -17,10 +26,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoanController {
 
     private static final String PREFIX = "/loan";
+    
+    @Autowired
+    private ILoanService loanService;
 
     @GetMapping(value = {"/index", "/", ""})
     public String index() {
         return PREFIX + "/index";
+    }
+
+    @PostMapping(value = "/save")
+    @ResponseBody
+    public ResponseVO saveLoan(@Valid @RequestBody Loan loan, BindingResult bindingResult) {
+        System.out.println("提交过来的贷款数据:" + loan);
+        /*if (bindingResult.hasErrors()) {
+            bindingResult.getAllErrors().forEach((error) -> {
+                    FieldError fieldError = (FieldError) error;
+                    //属性
+                    String field = fieldError.getField();
+                    //错误信息
+                    String message = fieldError.getDefaultMessage();
+                    System.out.println(field + ":" + message);
+            });
+        }*/
+        int result = loanService.saveLoan(loan);
+        return new ResponseTool().success();
     }
 
     /**

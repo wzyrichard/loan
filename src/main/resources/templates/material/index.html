@@ -10,7 +10,16 @@
     <div th:replace="~{common/header::commonHeader}"></div>
     <!-- 导航部分 结束 -->
 
-    <div class="layui-container comment">
+    <div class="layui-container comment" style="padding-top: 0px">
+        <div class="layui-carousel" id="hnMaterial">
+            <div carousel-item>
+                <div>条目1</div>
+                <div>条目2</div>
+                <div>条目3</div>
+                <div>条目4</div>
+            </div>
+        </div>
+
         <div class="layui-row">
             <div class="layui-col-md-offset3 layui-col-md6">
 
@@ -59,6 +68,19 @@
             return false;
         });
     });
+
+    layui.use('carousel', function () {
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem:"#hnMaterial",
+            width: '100%',
+            height: '300px',
+            arrow: 'always',
+            anim: 'fade',
+            indicator: 'none'
+        });
+    })
 
     //文件上传
     layui.use('upload', function () {
