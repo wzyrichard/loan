@@ -10,7 +10,7 @@
 
     <!-- 基本列 开始 -->
     <sql id="BASE_COLUMN">
-        user_id, username, password, avatar, gender, age, id_card, ancestral_home, current_residence,
+        uid, username, password, avatar, gender, age, id_card, ancestral_home, current_residence,
         family_population, remark, create_time, update_time
     </sql>
     <!-- 基本列 结束 -->
@@ -20,11 +20,22 @@
         INSERT INTO
             <include refid="BASE_TABLE" />
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            username, password
+            <include refid="BASE_COLUMN" />
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{uid, jdbcType=BIGINT},
             #{username, jdbcType=VARCHAR},
-            #{password, jdbcType=VARCHAR}
+            #{password, jdbcType=VARCHAR},
+            #{avatar, jdbcType=VARCHAR},
+            #{gender, jdbcType=VARCHAR},
+            #{age, jdbcType=INTEGER},
+            #{idCard, jdbcType=VARCHAR},
+            #{ancestralHome, jdbcType=VARCHAR},
+            #{currentResidence, jdbcType=VARCHAR},
+            #{familyPopulation, jdbcType=INTEGER},
+            #{remark, jdbcType=VARCHAR},
+            #{createTime, jdbcType=DATE},
+            #{updateTime, jdbcType=DATE}
         </trim>
     </insert>
     <!-- 添加用户 结束 -->
