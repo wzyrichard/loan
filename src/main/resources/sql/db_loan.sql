@@ -10,16 +10,48 @@ Target Server Type    : MYSQL
 Target Server Version : 80015
 File Encoding         : 65001
 
-Date: 2019-07-03 20:18:20
+Date: 2019-07-03 20:26:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for tb_asset
+-- Table structure for tb_business_info
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_asset`;
-CREATE TABLE `tb_asset` (
+DROP TABLE IF EXISTS `tb_business_info`;
+CREATE TABLE `tb_business_info` (
+  `bizId` bigint(12) NOT NULL AUTO_INCREMENT COMMENT '营业信息主键',
+  `business_uid` bigint(225) DEFAULT NULL COMMENT '经营信息用户id',
+  `business_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '经营项目名称',
+  `scale` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '经营规模',
+  `years` int(255) DEFAULT NULL COMMENT '已经营年限',
+  `field` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '场所性质',
+  `land_area` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '场所规模',
+  `payment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '第一年投入',
+  `self_money` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '自筹资金',
+  `lend` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '贷款资金',
+  `lend_rate` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '贷款总投入占比',
+  `income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '前一年销售收入',
+  `net_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '前一年净收入',
+  `prospective_yeild` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '来年预期收入',
+  `pro_self_money` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期自筹资金',
+  `pro_lend` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期贷款资金',
+  `prospective_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期销售收入',
+  `prospective_net_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期净收入',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`bizId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_business_info
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for tb_carousel
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_carousel`;
+CREATE TABLE `tb_carousel` (
   `assetId` bigint(11) NOT NULL COMMENT '财务状况主键',
   `asset_uid` bigint(11) DEFAULT NULL COMMENT '财务状况用户id',
   `finance` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '金融类资产',
@@ -68,39 +100,7 @@ CREATE TABLE `tb_asset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
--- Records of tb_asset
--- ----------------------------
-
--- ----------------------------
--- Table structure for tb_business_info
--- ----------------------------
-DROP TABLE IF EXISTS `tb_business_info`;
-CREATE TABLE `tb_business_info` (
-  `bizId` bigint(12) NOT NULL AUTO_INCREMENT COMMENT '营业信息主键',
-  `business_uid` bigint(225) DEFAULT NULL COMMENT '经营信息用户id',
-  `business_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '经营项目名称',
-  `scale` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '经营规模',
-  `years` int(255) DEFAULT NULL COMMENT '已经营年限',
-  `field` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '场所性质',
-  `land_area` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '场所规模',
-  `payment` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '第一年投入',
-  `self_money` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '自筹资金',
-  `lend` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '贷款资金',
-  `lend_rate` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '贷款总投入占比',
-  `income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '前一年销售收入',
-  `net_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '前一年净收入',
-  `prospective_yeild` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '来年预期收入',
-  `pro_self_money` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期自筹资金',
-  `pro_lend` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期贷款资金',
-  `prospective_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期销售收入',
-  `prospective_net_income` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '预期净收入',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  PRIMARY KEY (`bizId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of tb_business_info
+-- Records of tb_carousel
 -- ----------------------------
 
 -- ----------------------------
