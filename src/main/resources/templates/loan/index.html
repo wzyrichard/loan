@@ -120,6 +120,34 @@
 
     <div th:replace="~{common/footer::commonFooter}"></div>
 </body>
+
+<script>
+    //Demo
+    layui.use('form', function(){
+        var element = layui.element;
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(loanForm)', function(data){
+            $.ajax({
+                url: 'loan/save',
+                method: 'POST',
+                data: JSON.stringify(data.field),
+                dataType: 'JSON',
+                contentType: 'application/json',
+                success: function (res) {
+                    if (res.code == 2000) {
+                        layer.alert("添加成功");
+                    }
+                },
+                error: function () {
+                    layer.error("添加失败");
+                }
+            })
+            return false;
+        });
+    });
+</script>
 <script src="js/loan/index.js"></script>
 <script src="js/common/bigDecimal.js"></script>
 </html>
