@@ -10,7 +10,7 @@
 
     <!-- 基本列 开始 -->
     <sql id="BASE_COLUMN">
-        loan_id, loan_amount, loan_term, guarantee_method, guarantor_name, loan_method, repayment,
+        loan_id, loan_uid, loan_amount, loan_term, guarantee_method, guarantor_name, loan_method, repayment,
         loan_use, create_time, update_time
     </sql>
     <!-- 基本列 结束 -->
@@ -20,20 +20,64 @@
         INSERT INTO
             <include refid="BASE_TABLE" />
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            loan_amount, loan_term, guarantee_method, guarantor_name, loan_method, repayment, loan_use,
-            create_time
+            <include refid="BASE_COLUMN" />
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{loanAmount, jdbcType=DECIMAL},
+            #{loanId, jdbcType=BIGINT},
+            #{loanUid, jbdcType=BIGINT},
+            #{loanAmount, jdbcType=VARCHAR},
             #{loanTerm, jbdcType=VARCHAR},
             #{guaranteeMethod, jdbcType=VARCHAR},
-            #{guaranteeName, jdbcType=VARCHAR},
+            #{guarantorName, jdbcType=VARCHAR},
             #{loanMethod, jdbcType=VARCHAR},
             #{repayment, jdbcType=VARCHAR},
             #{loanUse, jdbcType=VARCHAR},
-            NOW()
+            #{createTime, jdbcType=DATE},
+            #{updateTime, jdbcType=DATE}
         </trim>
     </insert>
     <!-- 添加贷款 结束 -->
+
+    <!-- 查找贷款 开始 -->
+    <select id="findUserById" parameterType="long" resultType="com.hnzx.loan.model.User">
+        SELECT
+        <include refid="BASE_COLUMN" />
+        FROM
+        <include refid="BASE_TABLE" />
+        WHERE
+        uid = #{uid, jdbcType=BIGINT}
+    </select>
+    <!-- 查找贷款 结束 -->
+
+    <!-- 查找所有贷款 开始 -->
+    <select id="findAllUser" resultType="com.hnzx.loan.model.User">
+        SELECT
+        <include refid="BASE_COLUMN" />
+        FROM
+        <include refid="BASE_TABLE" />
+    </select>
+    <!-- 查找所有贷款 结束 -->
+
+    <!-- 更新贷款 开始 -->
+    <update id="updateUser" parameterType="com.hnzx.loan.model.User">
+        UPDATE
+        <include refid="BASE_TABLE" />
+        SET
+        <if test="username != null">
+            username = #{username, jdbcType=VARCHAR}
+        </if>
+    </update>
+    <!-- 更新贷款 结束 -->
+
+    <!-- 删除用户 开始 -->
+    <delete id="deleteUser" parameterType="long">
+        DELETE
+        FROM
+        <include refid="BASE_TABLE" />
+        WHERE
+        uid = #{uid, jdbcType=BIGINT}
+    </delete>
+    <!-- 删除用户 结束 -->
+
 
 </mapper>
